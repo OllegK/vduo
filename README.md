@@ -1,5 +1,7 @@
 # vduo
 
+...
+
 ## Project setup
 ```
 yarn install
