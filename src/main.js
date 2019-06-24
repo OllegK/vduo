@@ -1,8 +1,10 @@
+import '@babel/polyfill';
+import 'mutationobserver-shim';
 import Vue from 'vue';
+import './plugins/bootstrap-vue';
 import App from './App.vue';
 import './registerServiceWorker';
-import * as firebase from "firebase";
-
+import * as firebase from 'firebase';
 
 const config = {
   apiKey: 'AIzaSyBF7QuycOZpW0vDEL9CYshJL1Z5f8FafYc',
@@ -11,7 +13,7 @@ const config = {
   projectId: 'vduo200',
   storageBucket: '',
   messagingSenderId: '368681663778',
-  appId: '1:368681663778:web:cfc94eee9cefa222'
+  appId: '1:368681663778:web:cfc94eee9cefa222',
 };
 
 firebase.initializeApp(config);
@@ -26,8 +28,8 @@ messaging.requestPermission().then(() => {
 
   // Get Token
   messaging.getToken().then((token) => {
-    console.log(token)
-  })
+    console.log(token);
+  });
 }).catch((err) => {
   console.log('Unable to get permission to notify.', err);
 });
