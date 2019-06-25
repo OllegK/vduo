@@ -5,11 +5,8 @@
         <button class="btn btn-primary" @click="onNextQuestion">Next Question</button>
     </div>
 </template>
-<style>
 
-</style>
 <script>
-
 export default {
   methods: {
     onNextQuestion() {

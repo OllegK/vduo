@@ -1,10 +1,10 @@
 import '@babel/polyfill';
 import 'mutationobserver-shim';
-import Vue from 'vue';
+import * as firebase from 'firebase';
 import './plugins/bootstrap-vue';
+import Vue from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
-import * as firebase from 'firebase';
 
 const config = {
   apiKey: 'AIzaSyBF7QuycOZpW0vDEL9CYshJL1Z5f8FafYc',

@@ -9,25 +9,25 @@
     "start": "http-server -c-1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "bootstrap-vue": "^2.0.0-rc.24",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "firebase": "^6.2.2",
+    "mutationobserver-shim": "^0.3.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.4.4",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "bootstrap": "^4.3.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "http-server": "^0.11.1",
-    "mutationobserver-shim": "^0.3.3",
     "node-sass": "^4.12.0",
     "popper.js": "^1.15.0",
     "portal-vue": "^2.1.4",
