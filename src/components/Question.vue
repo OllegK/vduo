@@ -4,7 +4,7 @@
       <h3 class="card-title">{{ question }}</h3>
     </div>
     <div class="card-body row">
-      <div class="col-12 col-md-6 text-center" v-for="i in [0, 1, 2, 3]" :key="i">
+      <div class="col-6 col-sm-6 col-md-6 text-center" v-for="i in [0, 1, 2, 3]" :key="i">
         <button
           class="btn btn-primary btn-lg"
           style="margin: 10px"
