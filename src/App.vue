@@ -6,10 +6,12 @@
           <h1 class="text-center">Math Quiz</h1>
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="row justify-content-center">
         <div class="col-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-          <component :is="mode" @answered="answered($event)" @confirmed="mode = 'app-question'" />
+          <transition name="flip" mode="out-in">
+            <component :is="mode" @answered="answered($event)" @confirmed="mode = 'app-question'" />
+          </transition>
         </div>
       </div>
     </div>
@@ -17,28 +19,57 @@
 </template>
 
 <script>
-import Question from './components/Question.vue';
-import Answer from './components/Answer.vue';
+import Question from "./components/Question.vue";
+import Answer from "./components/Answer.vue";
 
 export default {
   data() {
     return {
-      mode: 'app-question',
+      mode: "app-question"
     };
   },
   methods: {
     answered(isCorrect) {
       if (isCorrect) {
-        this.mode = 'app-answer';
+        this.mode = "app-answer";
       } else {
-        this.mode = 'app-question';
-        alert('Wrong, try again!'); // TODO: CHANGE THAT: ALERT
+        this.mode = "app-question";
+        alert("Wrong, try again!"); // TODO: CHANGE THAT: ALERT
       }
-    },
+    }
   },
   components: {
     appQuestion: Question,
-    appAnswer: Answer,
-  },
+    appAnswer: Answer
+  }
 };
 </script>
+
+<style>
+
+.flip-enter-active {
+  animation: flip-in 0.5s ease-out forwards;
+}
+
+.flip-leave-active {
+  animation: flip-out 0.5s ease-out forwards;
+}
+
+@keyframes flip-out {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+</style>
